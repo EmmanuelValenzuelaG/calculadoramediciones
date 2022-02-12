@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css" integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn" crossorigin="anonymous">
+    <link href="MODI.css" rel="stylesheet" type="text/css">
+    <title>Calcular Senciblidad</title>
+</head>
+<style>
+    body{
+   background-image: url(minimalist-tree-wallpaper-preview.jpg.png);
+  
+       background-size:auto;
+   }
+ 
+
+</style>
+<body>
+   <h1 class="text-center">Calcular Senciblidad</h1>
+ <div class="container-md align-items-center">
+   <form class="was-validated align-items-center">
+    <div class="col-md-6 mb-3 ">
+      <label for="validationTextarea" style ="font-family:fantasy">VALOR FENS</label>
+      <input type="number" class="form-control is-invalid" id="A1" placeholder="INGRESE VALOR FENS" required></input>
+      <div class="invalid-feedback">
+        Ingrese el valor que este en el sistema FENS
+      </div>
+    </div>
+    <div class="col-md-6 mb-3">
+        <label for="validationTextarea" style="font-family:fantasy;">VALOR PESO DE REFERENCIA </label>
+        <input type="number" class="form-control is-invalid" id="A2" placeholder="INGRESE EL PESO DEL CAMION PATRON" required></textarea>
+        <div class="invalid-feedback">
+          Ingrese el valor que le entregue el camion patron
+        </div>
+      </div>
+      <div class="col-md-6 mb-3">
+        <label for="validationTextarea" style="font-family:fantasy;">VALOR PESO BASCULA</label>
+        <input type="number" class="form-control is-invalid" id="A3" placeholder="INGRESE EL PESO QUE ENTREGA LA BASCULA" required></textarea>
+        <div class="invalid-feedback">
+          Ingrese el peso que este en el sistema del camion
+        </div>
+      </div>
+      <button class="btn btn-success col-md-6" onclick="Calcular()">Calcular</button>
+<br>
+      <button class="btn btn-warning text-white col-md-6" onclick="location.href='INICIO.html'">VOLVER</button>
+   </form>
+ </div>
+      <link href="MODI.css" rel="stylesheet" type="text/css">
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-fQybjgWLrvvRgtW6bFlB7jaZrFsaBXjsOMm/tB9LTS58ONXgqbR9W8oWht/amnpF" crossorigin="anonymous"></script>
+<script>
+    function  Calcular() {
+        var F = parseInt(document.getElementById('A1').value);
+        var PC = parseInt(document.getElementById('A2').value);
+        var PS = parseInt(document.getElementById('A3').value);
+        var  valor =  PC/PS;
+        var ul = valor * F;
+
+        alert('La senciblidad es de:' +ul.toFixed())
+    }
+</script>
+
+</body>
+</html>
